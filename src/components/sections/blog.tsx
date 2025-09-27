@@ -17,7 +17,7 @@ export function Blog() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {articles.map((article) => (
-            <Card key={article.title} className="flex flex-col overflow-hidden">
+            <Card key={article.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader className="p-0">
                     <div className="relative aspect-video">
                         <Image
@@ -34,7 +34,7 @@ export function Blog() {
                 <CardDescription>{article.description}</CardDescription>
               </CardContent>
               <CardFooter className="p-6 pt-0">
-                <Button variant="link" asChild className="p-0 h-auto">
+                <Button variant="link" asChild className="p-0 h-auto font-semibold">
                   <Link href={article.url}>
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4" />

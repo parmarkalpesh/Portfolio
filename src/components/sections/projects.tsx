@@ -18,19 +18,19 @@ export function Projects() {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden">
-                <CardHeader>
+            <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardHeader className="p-0">
                     <div className="relative aspect-video">
                         <Image 
                             src={project.image.imageUrl}
                             alt={project.title}
                             fill
-                            className="object-cover rounded-t-lg"
+                            className="object-cover"
                             data-ai-hint={project.image.imageHint}
                         />
                     </div>
                 </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="p-6 flex-grow">
                 <CardTitle className="font-headline mb-2">{project.title}</CardTitle>
                 <CardDescription className="mb-4">{project.description}</CardDescription>
                 <div className="flex flex-wrap gap-2">
@@ -39,7 +39,7 @@ export function Projects() {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-end gap-2">
+              <CardFooter className="flex justify-end gap-2 p-6 pt-0">
                 <Button variant="outline" asChild>
                   <Link href={project.liveUrl} target="_blank">
                     <ExternalLink />

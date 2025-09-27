@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThreeScene from "../three-scene";
 
@@ -12,22 +12,23 @@ export function Hero() {
             <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
             John Doe
             </h1>
-            <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
+            <p className="max-w-[700px] text-lg text-foreground/80 sm:text-xl font-light">
             Software Engineer & Web Developer
             </p>
         </div>
-        <p className="max-w-[700px] text-muted-foreground md:text-lg">
+        <p className="max-w-[700px] text-foreground/70 md:text-lg">
           Crafting elegant, performant, and user-centric digital experiences from concept to production.
         </p>
         <div className="flex gap-4">
           <Button asChild size="lg">
             <Link href="#projects">
               View My Work
-              <ArrowDown className="ml-2 h-4 w-4" />
+              <ArrowDown />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="secondary">
+          <Button asChild size="lg" variant="outline">
             <Link href="/resume.pdf" target="_blank" download>
+                <Download />
                 Download CV
             </Link>
           </Button>

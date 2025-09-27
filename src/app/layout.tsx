@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins, PT_Sans } from 'next/font/google';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from '@/components/theme-provider';
@@ -9,13 +9,12 @@ import { Toaster } from '@/components/ui/toaster';
 
 const fontHeadline = Poppins({
   subsets: ['latin'],
-  weight: ['400', '700', '800'],
+  weight: ['300', '400', '600', '700', '800'],
   variable: '--font-headline',
 });
 
-const fontBody = PT_Sans({
+const fontBody = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
   variable: '--font-body',
 });
 

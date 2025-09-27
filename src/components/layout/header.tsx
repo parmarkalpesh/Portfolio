@@ -43,20 +43,21 @@ export function Header() {
         scrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-20">
         <Link href="/" className="text-xl font-bold font-headline tracking-tight">
           Persona Canvas
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-1">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
+            <Button variant="ghost" asChild key={link.href}>
+              <Link
+                href={link.href}
+                className="transition-colors hover:text-primary px-4 py-2"
+              >
+                {link.label}
+              </Link>
+            </Button>
           ))}
         </nav>
 
