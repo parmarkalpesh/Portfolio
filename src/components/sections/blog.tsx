@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Blog() {
   return (
-    <section id="blog">
+    <section id="blog" className="bg-background">
       <div className="container">
         <div className="flex flex-col items-center text-center gap-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">From My Blog</h2>

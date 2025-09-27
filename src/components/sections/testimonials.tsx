@@ -14,7 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-secondary">
+    <section id="testimonials" className="bg-background">
       <div className="container">
         <div className="flex flex-col items-center text-center gap-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Testimonials</h2>
