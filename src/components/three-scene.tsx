@@ -28,16 +28,20 @@ const ThreeScene: React.FC = () => {
         const starGeometry = new THREE.BufferGeometry();
         const starCount = 10000;
         const positions = new Float32Array(starCount * 3);
+        const velocities = new Float32Array(starCount);
 
-        for (let i = 0; i < starCount * 3; i++) {
-            positions[i] = (Math.random() - 0.5) * 1000;
+        for (let i = 0; i < starCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+            velocities[i] = Math.random() * 0.05 + 0.01;
         }
 
         starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
         const starMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
-            size: 0.7,
+            size: 0.015,
             transparent: true,
         });
 
@@ -55,16 +59,23 @@ const ThreeScene: React.FC = () => {
         window.addEventListener('mousemove', handleMouseMove);
 
         // Animation
-        const clock = new THREE.Clock();
         const animate = () => {
-            const elapsedTime = clock.getElapsedTime();
+            const positions = starGeometry.attributes.position.array as Float32Array;
 
-            stars.rotation.y = -mouseX * 0.1 + elapsedTime * 0.01;
-            stars.rotation.x = -mouseY * 0.1;
-
-            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
-            camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.02;
+            for (let i = 0; i < starCount; i++) {
+                positions[i * 3 + 2] += velocities[i];
+                
+                if (positions[i * 3 + 2] > 5) {
+                    positions[i * 3] = (Math.random() - 0.5) * 10;
+                    positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+                    positions[i * 3 + 2] = -5;
+                }
+            }
+            starGeometry.attributes.position.needsUpdate = true;
             
+            stars.rotation.y = mouseX * 0.1;
+            stars.rotation.x = mouseY * 0.1;
+
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
         };
