@@ -12,19 +12,17 @@ export function Experience() {
             </p>
         </div>
 
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
+        <div className="relative max-w-2xl mx-auto">
+          <div className="absolute left-4 md:left-6 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
           
           {experiences.map((exp, index) => (
-            <div key={index} className="relative mb-12 flex items-start">
-              {/* Dot on the timeline */}
-              <div className="absolute left-4 md:left-1/2 top-1 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <div key={index} className="relative mb-8 flex items-start">
+              <div className="absolute left-4 md:left-6 top-1 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <Briefcase className="h-4 w-4" />
               </div>
               
-              <div className={`w-full pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                  <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:ml-auto' : ''}`}>
+              <div className="w-full pl-12 md:pl-16">
+                  <div>
                     <p className="font-semibold text-lg">{exp.role}</p>
                     <p className="text-primary font-medium">{exp.company}</p>
                     <p className="text-sm text-muted-foreground mb-2">{exp.duration}</p>
