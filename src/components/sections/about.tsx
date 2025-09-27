@@ -3,8 +3,8 @@ import Image from "next/image";
 export function About() {
   return (
     <section id="about" className="bg-background">
-      <div className="container grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-        <div className="relative aspect-square max-w-md mx-auto">
+      <div className="container grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="relative aspect-square max-w-md mx-auto w-full">
           <Image
             src="https://picsum.photos/seed/profile/600/600"
             alt="Kalpesh Parmar"

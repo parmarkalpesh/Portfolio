@@ -19,6 +19,7 @@ const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#education", label: "Education" },
+  { href: "#tech-stack", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
@@ -43,7 +44,7 @@ export function Header() {
         scrolled ? "bg-background/80 shadow-md backdrop-blur-sm" : "bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between h-20">
+      <div className="container flex items-center justify-between h-16 md:h-20">
         <Link href="/" className="text-xl font-bold font-headline tracking-tight">
           Kalpesh Parmar
         </Link>
@@ -53,7 +54,7 @@ export function Header() {
             <Button variant="ghost" asChild key={link.href}>
               <Link
                 href={link.href}
-                className="transition-colors hover:text-primary px-4 py-2"
+                className="transition-colors hover:text-primary px-3 py-2"
               >
                 {link.label}
               </Link>
