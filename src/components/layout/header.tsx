@@ -45,7 +45,7 @@ export function Header() {
     >
       <div className="container flex items-center justify-between h-20">
         <Link href="/" className="text-xl font-bold font-headline tracking-tight">
-          Persona Canvas
+          Kalpesh Parmar
         </Link>
 
         <nav className="hidden md:flex items-center space-x-1">
@@ -73,7 +73,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right">
                 <SheetHeader>
-                  <SheetTitle className="text-left font-headline">Persona Canvas</SheetTitle>
+                  <SheetTitle className="text-left font-headline">Kalpesh Parmar</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-8">
                   {NAV_LINKS.map((link) => (

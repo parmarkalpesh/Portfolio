@@ -19,8 +19,8 @@ const fontBody = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Persona Canvas | John Doe',
-  description: 'Personal portfolio of John Doe, a Software Engineer and Web Developer.',
+  title: 'Kalpesh Parmar | Portfolio',
+  description: 'Personal portfolio of Kalpesh Parmar, a passionate and skilled developer.',
 };
 
 export default function RootLayout({

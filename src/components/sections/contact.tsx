@@ -51,7 +51,7 @@ export function Contact() {
         <div className="flex flex-col items-center text-center gap-4 mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Get In Touch</h2>
           <p className="max-w-[700px] text-muted-foreground md:text-lg">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+           Have a project in mind or just want to say hello? I'd love to hear from you. My email is <a href="mailto:parmarkalpesh1586@gmail.com" className="text-primary underline">parmarkalpesh1586@gmail.com</a> and phone is +91 7016223029.
           </p>
         </div>
         <Card className="max-w-xl mx-auto">

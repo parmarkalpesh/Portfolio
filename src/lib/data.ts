@@ -17,34 +17,26 @@ const getImage = (id: string): ImagePlaceholder => {
 
 export const projects = [
   {
-    title: "AI-Powered Task Manager",
-    description: "A smart task management application that uses AI to prioritize and suggest tasks.",
+    title: "GreenStation",
+    description: "A sustainable product marketplace.",
     image: getImage('project-1'),
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Genkit AI"],
+    stack: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
     liveUrl: "#",
     codeUrl: "#",
   },
   {
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce website with a custom CMS and payment integration.",
+    title: "SkillHub",
+    description: "A student skill-sharing platform.",
     image: getImage('project-2'),
-    stack: ["React", "Node.js", "Express", "MongoDB"],
+    stack: ["Next.js", "Express.js", "MySQL", "Bootstrap"],
     liveUrl: "#",
     codeUrl: "#",
   },
   {
-    title: "Interactive Data Visualization",
-    description: "A web-based tool for visualizing complex datasets with interactive charts and maps.",
+    title: "Portfolio Website",
+    description: "A responsive personal portfolio website.",
     image: getImage('project-3'),
-    stack: ["D3.js", "React", "Python", "Flask"],
-    liveUrl: "#",
-    codeUrl: "#",
-  },
-  {
-    title: "Mobile Banking App",
-    description: "A secure and user-friendly mobile app for a modern digital bank.",
-    image: getImage('project-4'),
-    stack: ["React Native", "Firebase", "TypeScript"],
+    stack: ["React.js", "Node.js", "CSS3"],
     liveUrl: "#",
     codeUrl: "#",
   },
@@ -52,22 +44,10 @@ export const projects = [
 
 export const experiences = [
   {
-    company: "Tech Solutions Inc.",
-    role: "Senior Software Engineer",
-    duration: "2020 - Present",
-    description: "Led the development of a new microservices-based architecture, improving system scalability by 40%. Mentored junior engineers and conducted code reviews.",
-  },
-  {
-    company: "Web Innovators",
-    role: "Frontend Developer",
-    duration: "2018 - 2020",
-    description: "Developed and maintained responsive user interfaces for client websites using React and Vue.js. Collaborated with designers to implement pixel-perfect designs.",
-  },
-  {
-    company: "Digital Creations",
-    role: "Junior Web Developer",
-    duration: "2016 - 2018",
-    description: "Assisted in the development of WordPress themes and plugins. Gained experience in HTML, CSS, JavaScript, and PHP.",
+    company: "CodSoft",
+    role: "Web Development Intern",
+    duration: "1 Month",
+    description: "Developed and deployed a responsive web application using React.js and Node.js, collaborating with developers through GitHub for version control.",
   },
 ];
 
@@ -75,19 +55,19 @@ export const testimonials = [
   {
     name: "Jane Smith",
     role: "CEO, Tech Solutions Inc.",
-    quote: "John is a phenomenal engineer. His technical expertise and leadership have been instrumental to our team's success. He consistently delivers high-quality work on time.",
+    quote: "Kalpesh is a phenomenal engineer. His technical expertise and leadership have been instrumental to our team's success. He consistently delivers high-quality work on time.",
     avatar: "https://picsum.photos/seed/avatar1/100/100",
   },
   {
     name: "Michael Brown",
     role: "Product Manager, Web Innovators",
-    quote: "Working with John was a pleasure. He has a keen eye for detail and a deep understanding of user experience. I was always impressed with his creative solutions to complex problems.",
+    quote: "Working with Kalpesh was a pleasure. He has a keen eye for detail and a deep understanding of user experience. I was always impressed with his creative solutions to complex problems.",
     avatar: "https://picsum.photos/seed/avatar2/100/100",
   },
   {
     name: "Emily White",
     role: "Lead Designer, Digital Creations",
-    quote: "John is a collaborative and talented developer who bridges the gap between design and code effortlessly. He brings ideas to life in a way that exceeds expectations.",
+    quote: "Kalpesh is a collaborative and talented developer who bridges the gap between design and code effortlessly. He brings ideas to life in a way that exceeds expectations.",
     avatar: "https://picsum.photos/seed/avatar3/100/100",
   },
 ];
@@ -106,18 +86,24 @@ export const articles = [
         url: "#",
     },
     {
-        title: "A Guide to 3D Web Graphics with Three.js",
-        description: "Getting started with Three.js to create stunning, interactive 3D experiences on the web.",
+        title: "Getting Started with Node.js and Express",
+        description: "A beginner's guide to building a backend server with Node.js and the Express framework.",
         image: getImage('blog-3'),
         url: "#",
     }
 ];
 
 export const skills = [
-    { name: "TypeScript", icon: "typescript" },
-    { name: "React", icon: "react" },
+    { name: "HTML5", icon: "html5" },
+    { name: "CSS3", icon: "css3" },
+    { name: "JavaScript", icon: "javascript" },
+    { name: "React.js", icon: "react" },
     { name: "Next.js", icon: "nextjs" },
     { name: "Node.js", icon: "nodejs" },
     { name: "Tailwind CSS", icon: "tailwind" },
-    { name: "Figma", icon: "figma" },
+    { name: "Bootstrap", icon: "bootstrap" },
+    { name: "Express.js", icon: "express" },
+    { name: "MongoDB", icon: "mongodb" },
+    { name: "MySQL", icon: "mysql" },
+    { name: "Git", icon: "git" },
 ];

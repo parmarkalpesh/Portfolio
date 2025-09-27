@@ -10,14 +10,14 @@ export function Hero() {
       <div className="relative z-10 container flex flex-col items-center gap-6">
         <div className="flex flex-col items-center gap-2">
             <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-            John Doe
+            Kalpesh Parmar
             </h1>
             <p className="max-w-[700px] text-lg text-foreground/80 sm:text-xl font-light">
-            Software Engineer & Web Developer
+            MCA Student & Aspiring Developer
             </p>
         </div>
         <p className="max-w-[700px] text-foreground/70 md:text-lg">
-          Crafting elegant, performant, and user-centric digital experiences from concept to production.
+          Eager to contribute technical skills and gain industry exposure.
         </p>
         <div className="flex gap-4">
           <Button asChild size="lg">
@@ -27,7 +27,7 @@ export function Hero() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="/resume.pdf" target="_blank" download>
+            <Link href="#" target="_blank">
                 <Download />
                 Download CV
             </Link>
