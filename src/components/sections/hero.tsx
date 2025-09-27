@@ -27,7 +27,7 @@ export function Hero() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="#" target="_blank">
+            <Link href="/Kalpesh_Resume.pdf" target="_blank">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
             </Link>

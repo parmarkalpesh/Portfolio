@@ -6,7 +6,7 @@ export function About() {
       <div className="container grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="relative aspect-square max-w-md mx-auto w-full">
           <Image
-            src="https://picsum.photos/seed/profile/600/600"
+            src="/Kalpesh_Image.jpg"
             alt="Kalpesh Parmar"
             fill
             className="rounded-lg object-cover shadow-lg"

@@ -18,27 +18,34 @@ const getImage = (id: string): ImagePlaceholder => {
 export const projects = [
   {
     title: "GreenStation",
-    description: "A sustainable product marketplace.",
+    description: "A sustainable platform for finding E-Vehicle charging point stations.",
     image: getImage('project-1'),
-    stack: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
-    liveUrl: "#",
-    codeUrl: "#",
+    stack: ["React.js", "Node.js","Express.js" ,"MongoDB", "Tailwind CSS"],
+    // liveUrl: "#",
+    codeUrl: "https://github.com/parmarkalpesh/GreenStation.git",
   },
   {
     title: "SkillHub",
-    description: "A student skill-sharing platform.",
+    description: "A student skill-sharing platform between friends with follow & following features, including Google authentication.",
     image: getImage('project-2'),
-    stack: ["Next.js", "Express.js", "MySQL", "Bootstrap"],
-    liveUrl: "#",
-    codeUrl: "#",
+    stack: ["React.js","Node.js", "Express.js", "Mongo Atlas", "Tailwind CSS"],
+    // liveUrl: "#",
+    codeUrl: "https://github.com/KrutikNaina/SkillHub-Frontend.git",
   },
   {
-    title: "Portfolio Website",
-    description: "A responsive personal portfolio website.",
+    title: "Tourism Booking Website",
+    description: "A platform for booking and managing travel itineraries.",
     image: getImage('project-3'),
-    stack: ["React.js", "Node.js", "CSS3"],
-    liveUrl: "#",
-    codeUrl: "#",
+    stack: ["HTML5", "CSS3", "JavaScript", "Bootstrap","PHP", "MySQL"],
+    // liveUrl: "#",
+    codeUrl: "https://github.com/parmarkalpesh/krishnatourism.git",
+  },
+  {
+    title: "NGOConnect",
+    description: "A platform for NGO connectivity and collaboration.",
+    image: getImage('project-4'),
+    stack: ["React.js","Node.js", "Express.js", "Mongo Atlas", "Tailwind CSS"],
+    codeUrl: "https://github.com/parmarkalpesh/NGO.git",
   },
 ];
 
@@ -46,8 +53,26 @@ export const experiences = [
   {
     company: "CodSoft",
     role: "Web Development Intern",
-    duration: "1 Month",
-    description: "Developed and deployed a responsive web application using React.js and Node.js, collaborating with developers through GitHub for version control.",
+    duration: "3 Month",
+    description: "Developed and deployed a responsive web application using HTML5, CSS3, and JavaScript.",
+  },
+  {
+    company: "Aushvera",
+    role: "Web Development Intern",
+    duration: "3 Month",
+    description: "Developed and deployed a responsive web application using HTML5, CSS3, and JavaScript, PHP, MySQL collaborating with developers through GitHub for version control.",
+  },
+  {
+    company: "Aptivison",
+    role: "Web Development Intern",
+    duration: "pursuing",
+    description: "Developed and deployed a responsive web application using React.js with related library useing collaborating with developers through GitHub for version control.",
+  },
+  {
+    company: "Navkalpit",
+    role: "Web Development Intern",
+    duration: "pursuing",
+    description: "Developed and deployed a responsive web application using React.js with related library useing collaborating with developers through GitHub for version control.",
   },
 ];
 
