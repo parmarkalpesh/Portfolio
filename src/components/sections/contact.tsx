@@ -35,7 +35,7 @@ export function Contact() {
         title: "Success!",
         description: state.message,
       });
-    } else if (state.message && Object.keys(state.errors).length > 0) {
+    } else if (state.message && state.errors && Object.keys(state.errors).length > 0) {
         const errorMessages = Object.values(state.errors).flat().join(' ');
         toast({
             variant: "destructive",
