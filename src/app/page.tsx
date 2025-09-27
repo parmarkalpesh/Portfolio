@@ -4,8 +4,6 @@ import { Projects } from "@/components/sections/projects";
 import { Experience } from "@/components/sections/experience";
 import { Contact } from "@/components/sections/contact";
 import { TechStack } from "@/components/sections/tech-stack";
-import { Testimonials } from "@/components/sections/testimonials";
-import { Blog } from "@/components/sections/blog";
 
 export default function Home() {
   return (
@@ -15,8 +13,6 @@ export default function Home() {
       <TechStack />
       <Projects />
       <Experience />
-      <Testimonials />
-      <Blog />
       <Contact />
     </>
   );
