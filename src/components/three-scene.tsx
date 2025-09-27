@@ -16,7 +16,7 @@ const ThreeScene: React.FC = () => {
         
         // Camera
         const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
-        camera.position.z = 1;
+        camera.position.z = 5;
 
         // Renderer
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -26,22 +26,22 @@ const ThreeScene: React.FC = () => {
 
         // Stars
         const starGeometry = new THREE.BufferGeometry();
-        const starCount = 10000;
+        const starCount = 5000;
         const positions = new Float32Array(starCount * 3);
         const velocities = new Float32Array(starCount);
 
         for (let i = 0; i < starCount; i++) {
-            positions[i * 3] = (Math.random() - 0.5) * 10;
-            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3] = (Math.random() - 0.5) * 20;
+            positions[i * 3 + 1] = Math.random() * 10;
             positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-            velocities[i] = Math.random() * 0.05 + 0.01;
+            velocities[i] = Math.random() * 0.02 + 0.01;
         }
 
         starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
         const starMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
-            size: 0.015,
+            size: 0.02,
             transparent: true,
         });
 
@@ -58,23 +58,34 @@ const ThreeScene: React.FC = () => {
         };
         window.addEventListener('mousemove', handleMouseMove);
 
+        let time = 0;
+
         // Animation
         const animate = () => {
+            time += 0.005;
             const positions = starGeometry.attributes.position.array as Float32Array;
 
             for (let i = 0; i < starCount; i++) {
-                positions[i * 3 + 2] += velocities[i];
+                // Move stars down
+                positions[i * 3 + 1] -= velocities[i];
                 
-                if (positions[i * 3 + 2] > 5) {
-                    positions[i * 3] = (Math.random() - 0.5) * 10;
-                    positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-                    positions[i * 3 + 2] = -5;
+                // Add side to side sine wave movement
+                positions[i * 3] += Math.sin(time + i) * 0.001;
+
+                // Reset star if it goes off screen
+                if (positions[i * 3 + 1] < -5) {
+                    positions[i * 3] = (Math.random() - 0.5) * 20;
+                    positions[i * 3 + 1] = 5;
+                    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
                 }
             }
             starGeometry.attributes.position.needsUpdate = true;
             
             stars.rotation.y = mouseX * 0.1;
             stars.rotation.x = mouseY * 0.1;
+            camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
+            camera.lookAt(scene.position);
+
 
             renderer.render(scene, camera);
             requestAnimationFrame(animate);
