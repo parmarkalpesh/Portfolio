@@ -34,7 +34,8 @@ const ThreeScene: React.FC = () => {
             positions[i * 3] = (Math.random() - 0.5) * 20;
             positions[i * 3 + 1] = Math.random() * 10;
             positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-            velocities[i] = Math.random() * 0.02 + 0.01;
+            // Slower speed for general stars
+            velocities[i] = Math.random() * 0.005 + 0.002;
         }
 
         starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -47,6 +48,32 @@ const ThreeScene: React.FC = () => {
 
         const stars = new THREE.Points(starGeometry, starMaterial);
         scene.add(stars);
+
+        // Falling Stars (Shooting Stars)
+        const fallingStarGeometry = new THREE.BufferGeometry();
+        const fallingStarCount = 20;
+        const fallingStarPositions = new Float32Array(fallingStarCount * 3);
+        const fallingStarVelocities = new Float32Array(fallingStarCount * 2); // [vy, vx]
+
+        for (let i = 0; i < fallingStarCount; i++) {
+            fallingStarPositions[i * 3] = (Math.random() - 0.5) * 20;
+            fallingStarPositions[i * 3 + 1] = Math.random() * 10 + 5; // Start higher up
+            fallingStarPositions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+            fallingStarVelocities[i*2] = Math.random() * 0.1 + 0.05; // Faster Y-velocity
+            fallingStarVelocities[i*2+1] = (Math.random() - 0.5) * 0.02; // Slight X-velocity
+        }
+
+        fallingStarGeometry.setAttribute('position', new THREE.BufferAttribute(fallingStarPositions, 3));
+
+        const fallingStarMaterial = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.8,
+        });
+
+        const fallingStars = new THREE.Points(fallingStarGeometry, fallingStarMaterial);
+        scene.add(fallingStars);
         
         // Mouse movement
         let mouseX = 0;
@@ -65,14 +92,11 @@ const ThreeScene: React.FC = () => {
             time += 0.005;
             const positions = starGeometry.attributes.position.array as Float32Array;
 
+            // Animate regular stars
             for (let i = 0; i < starCount; i++) {
-                // Move stars down
                 positions[i * 3 + 1] -= velocities[i];
-                
-                // Add side to side sine wave movement
-                positions[i * 3] += Math.sin(time + i) * 0.001;
+                positions[i * 3] += Math.sin(time + i) * 0.0005;
 
-                // Reset star if it goes off screen
                 if (positions[i * 3 + 1] < -5) {
                     positions[i * 3] = (Math.random() - 0.5) * 20;
                     positions[i * 3 + 1] = 5;
@@ -80,10 +104,24 @@ const ThreeScene: React.FC = () => {
                 }
             }
             starGeometry.attributes.position.needsUpdate = true;
+
+            // Animate falling stars
+            const fallingPositions = fallingStarGeometry.attributes.position.array as Float32Array;
+            for(let i = 0; i < fallingStarCount; i++) {
+                fallingPositions[i * 3 + 1] -= fallingStarVelocities[i*2];
+                fallingPositions[i * 3] -= fallingStarVelocities[i*2+1];
+
+                if (fallingPositions[i * 3 + 1] < -5) {
+                    fallingPositions[i * 3] = (Math.random() - 0.5) * 20;
+                    fallingPositions[i * 3 + 1] = Math.random() * 5 + 5;
+                }
+            }
+            fallingStarGeometry.attributes.position.needsUpdate = true;
+
             
-            stars.rotation.y = mouseX * 0.1;
-            stars.rotation.x = mouseY * 0.1;
-            camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
+            // Parallax effect
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
+            camera.position.y += (-mouseY * 0.5 - camera.position.y) * 0.02;
             camera.lookAt(scene.position);
 
 
@@ -114,6 +152,8 @@ const ThreeScene: React.FC = () => {
             renderer.dispose();
             starGeometry.dispose();
             starMaterial.dispose();
+            fallingStarGeometry.dispose();
+            fallingStarMaterial.dispose();
         };
     }, []);
 
