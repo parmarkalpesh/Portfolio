@@ -42,13 +42,13 @@ export function Projects() {
               <CardFooter className="flex justify-end gap-2 p-6 pt-0">
                 <Button variant="outline" asChild>
                   <Link href={project.liveUrl} target="_blank">
-                    <ExternalLink />
+                    <ExternalLink className="mr-2 h-4 w-4" />
                     Live Demo
                   </Link>
                 </Button>
                 <Button asChild>
                   <Link href={project.codeUrl} target="_blank">
-                    <Code />
+                    <Code className="mr-2 h-4 w-4" />
                     View Code
                   </Link>
                 </Button>

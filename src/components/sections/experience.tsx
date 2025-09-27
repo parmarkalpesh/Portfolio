@@ -3,7 +3,7 @@ import { Briefcase } from "lucide-react";
 
 export function Experience() {
   return (
-    <section id="experience" className="bg-secondary">
+    <section id="experience" className="bg-background">
       <div className="container">
         <div className="flex flex-col items-center text-center gap-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Work Experience</h2>
