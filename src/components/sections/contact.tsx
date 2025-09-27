@@ -1,7 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect } from 'react';
+import { useActionState, useEffect } from 'react';
+import { useFormStatus } from 'react-dom';
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from '@/app/actions';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -26,7 +26,7 @@ function SubmitButton() {
 }
 
 export function Contact() {
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -51,13 +51,13 @@ export function Contact() {
         <div className="flex flex-col items-center text-center gap-4 mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">Get In Touch</h2>
           <p className="max-w-[700px] text-muted-foreground md:text-lg">
-            Have a project in mind or just want to say hello? I&apos;d love to hear from you.
+            Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
         </div>
         <Card className="max-w-xl mx-auto">
           <CardHeader>
             <CardTitle>Contact Me</CardTitle>
-            <CardDescription>Fill out the form below and I&apos;ll get back to you as soon as possible.</CardDescription>
+            <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
           </CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
